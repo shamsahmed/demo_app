@@ -1,0 +1,25 @@
+<h1>Listing miscroposts</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @miscroposts.each do |miscropost| %>
+  <tr>
+    <td><%= miscropost.content %></td>
+    <td><%= miscropost.user_id %></td>
+    <td><%= link_to 'Show', miscropost %></td>
+    <td><%= link_to 'Edit', edit_miscropost_path(miscropost) %></td>
+    <td><%= link_to 'Destroy', miscropost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Miscropost', new_miscropost_path %>
